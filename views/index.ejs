@@ -1,20 +1,26 @@
 <%- include('./partials/header.ejs') %>
-<form>
-<% if (user) { %>
-    <h3>Jump In</h3>
-    <a href="/">Write a Cue</a>
-    <label>Title Your Cue</label>
-    <input type="text" name="title">
-    <br>
-    <label>Tone</label>
-    <select name="tone">
-        <option value="creative">Creative</option>
-        <option value="comedic">Comedic</option>
-        <option value="memoir">Memoir</option>
-    </select>
-    <br>
-    <label>Give A Cue</label>
-    <input name="cueContent">
-    <button type="sumbit">Submit Cue</button>
-    <% } %>
-</form>
+
+    <% if (user) { %>
+        <form>
+        <h3>Jump In</h3>
+        <a href="/">Write a Cue</a>
+        <label>Title Your Cue</label>
+        <input type="text" name="title">
+        <br>
+        <label>Tag Your Tone</label>
+        <select name="tone">
+            <option value="creative">Creative</option>
+            <option value="comedic">Comedic</option>
+            <option value="memoir">Memoir</option>
+        </select>
+        <br>
+        <label>Give A Cue</label>
+        <input name="cueContent">
+        <button type="sumbit">Submit Cue</button>
+    </form>
+    <h3>content here</h3>
+   
+    
+    
+        <% }; %>
+    
