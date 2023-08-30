@@ -1,1 +1,23 @@
-<h3>hopefully cues/index</h3>
+<%- include('../partials/header.ejs') %>
+<h2>All Cues List</h2>
+<table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Tone</th>
+        <th>Content</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <% cues.forEach(function(c) { %>
+        <tr>
+          <td><%= c.title %></td>
+          <td><%= c.tone %></td>
+          <td><%= c.cueContent %></td>
+          <td><a href="/cues/<%= c._id %>">Add Bit</a></td>
+        </tr>
+     
+      <% }); %>
+    </tbody>
+  </table>

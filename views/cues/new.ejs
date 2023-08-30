@@ -1,0 +1,22 @@
+<%- include('../partials/header.ejs') %>
+
+<h3>Write a Cue</h3>
+<form action="/cues" method="POST">
+    <label>Title Your Cue </label>
+        <input type="text" name="title">
+   
+    <br>
+    <label>Tag Your Tone </label>
+    <select name="tone">
+        <option value="creative">Creative</option>
+        <option value="comedic">Comedic</option>
+        <option value="memoir">Memoir</option>
+    </select>
+    <br>
+    <label>Give A Cue</label>
+    <input type="text" name="cueContent">
+
+    <button type="sumbit">Submit Cue</button>
+</form>
+
+<h6>I am different now</h6>

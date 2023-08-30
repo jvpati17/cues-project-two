@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
     <nav>
     <% if (user) { %>
-      <a href="/">All Cues</a>
+      
+        <a href="/cues/new">Write New Cue</a>
+        &nbsp;|&nbsp;
+        <a href="/cues">All Cues</a>
+      &nbsp;|&nbsp;
+      <a href="/">Home</a>
+      &nbsp;|&nbsp;
  <a href="/logout">Log Out</a>
+
  <% } else { %>
+<h1>Cues</h1>
     <a href="/auth/google" class="login">Log In</a>
     <% } %>
  </nav>
+ 
  

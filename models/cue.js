@@ -2,12 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const cueSchema = new Schema ({
-    title: {
-        type: String
-    },
+    title: String,
     tone: {
         type: String,
-        enum: ['Creative', 'Comedic', 'Memoir'],
+        enum: ['creative', 'comedic', 'memoir']
     },
     cueContent: {
         type: String,
