@@ -2,7 +2,7 @@
 The idea behind this simple app is to help writers, poets and storytellers
 of all levels:
 
-1. Practice their skills in a safe enviroment
+1. Practice their skills in a loose/fun enviroment
 2. Break out of writer's block
 3. Connect with other storytellers
 4. Store ideas and get feedback
