@@ -27,3 +27,9 @@ Edit/Delete
 # technologies-used:
 - HTML - CSS - JavaScript - Atlas - MongoDb
 - Mongoose - Express - Node.js
+
+# Future Plans/Ideas
+
+- *Fix "My Cues" page to only render Cues written by user.
+- Allow users to sort through bits by author only, creating
+a continuous story per cue.
