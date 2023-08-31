@@ -1,5 +1,5 @@
 # Cues
-The ideology behind this simple app is to help writers and storytellers
+The idea behind this simple app is to help writers, poets and storytellers
 of all levels:
 
 1. Practice their skills in a safe enviroment
