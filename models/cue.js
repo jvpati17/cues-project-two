@@ -1,6 +1,22 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const bitSchema = new Schema({
+    bitContent: {
+        type: String,
+        required: true
+    },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+    userName: String,
+    userAvatar: String
+}, {
+    timestamps: true
+});
+
 const cueSchema = new Schema ({
     title: String,
     tone: {
@@ -11,6 +27,7 @@ const cueSchema = new Schema ({
         type: String,
         required: true
     },
+    bits: [bitSchema],
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User',

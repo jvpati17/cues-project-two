@@ -8,11 +8,12 @@ require('./config/database');
 const session = require('express-session');
 const passport = require('passport');
 require('./config/passport');
+var methodOverride = require('method-override');
 
 
 var indexRouter = require('./routes/index');
 var cuesRouter = require('./routes/cues');
-//const cuesRouter = require('./routes/cues');
+const bitsRouter = require('./routes/bits');
 
 var app = express();
 
@@ -25,6 +26,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'));
 
 app.use(session({
   secret: process.env.SECRET,
@@ -41,7 +43,7 @@ app.use(function (req, res, next) {
 
 app.use('/', indexRouter);
 app.use('/cues', cuesRouter);
-//app.use('/cues', cuesRouter);
+app.use('/', bitsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

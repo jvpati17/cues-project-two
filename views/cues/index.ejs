@@ -1,5 +1,6 @@
 <%- include('../partials/header.ejs') %>
-<h2>All Cues List</h2>
+<div id="welcomemsg">
+<h3>My Cues</h3>
 <table>
     <thead>
       <tr>
@@ -10,14 +11,18 @@
     </thead>
     <tbody>
       
+      
       <% cues.forEach(function(c) { %>
         <tr>
           <td><%= c.title %></td>
           <td><%= c.tone %></td>
           <td><%= c.cueContent %></td>
-          <td><a href="/cues/<%= c._id %>">Add Bit</a></td>
+          <td><a href="/cues/<%= c._id %>">Bits</a></td>
         </tr>
      
       <% }); %>
+      
+     
     </tbody>
   </table>
+</div>

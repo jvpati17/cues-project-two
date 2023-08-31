@@ -1,3 +1,68 @@
 <%- include('../partials/header') %>
-<h3>show page</h3>
+<div id="welcomemsg">
+<h3>Psst, that's your Cue...</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Author</th>
+      <th>Title</th>
+      <th>Cue</th>
+      <th>...</th>
+      <th>...</th>
 
+    </tr>
+  </thead>
+  <tbody>
+    <td><%= cue.userName %> &nbsp;|&nbsp;</td> 
+    <td><%= cue.title %> &nbsp;|&nbsp;</td> 
+    <td><%= cue.cueContent %> &nbsp;|&nbsp;</td>
+    <% if (user?._id.equals(cue.user)) { %>
+    <td><a href="/cues/<%= cue._id %>/edit">
+      <button id="editbtn">Edit Cue</button>
+    </a></td>
+    <td><form action="/cues/<%= cue._id %>?_method=DELETE" method="POST">
+      <button type="submit">Delete Cue</button>
+    </form></td>
+  </tbody>
+</table>
+<% } %>
+
+
+<h4>...add your Bit</h4>
+<form id="add-bit-form" method="POST" action="/cues/<%= cue.id %>/bits">
+    <textarea name="bitContent"></textarea>
+    <input type="submit" value="Add Bit">
+</form>
+
+<% if (cue.bits.length) { %>
+   <table>
+    <thead>
+        <tr>
+            <th>Bits</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% cue.bits.forEach(function(b) { %>
+            <tr>
+                <td><%= b.userName %></td>
+                <td><%= b.createdAt.toLocaleDateString() %></td>
+                <td><%= b.bitContent %></td>
+                <td>
+                    <% if (user?._id.equals(b.user)) { %>
+                      
+                      <form action="/bits/<%= b._id %>?_method=DELETE" method="POST">
+                        <button type="submit">Delete Bit</button>
+                      </form>
+                    <% } %>
+                  </td>
+            </tr>
+                <% }); %>
+                <tr>
+                    
+                  </tr>
+    </tbody>
+   </table>
+   <% } else { %>
+    <h5>No Bits Yet</h5>
+    <% } %>
+  </div>

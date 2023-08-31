@@ -1,18 +1,13 @@
 var express = require('express');
 var router = express.Router();
 const passport = require('passport');
-//const cuesCtrl = require('../controllers/cues');
-
-
+const Cue = require('../models/cue');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Cues' });
+router.get('/', async function(req, res, next) {
+  const cues = await Cue.find({});
+  res.render('index', { cues });
 }); 
-
-//router.post('/', cuesCtrl.create);
-//router.get('/', cuesCtrl.index); 
-//router.get('/', cuesCtrl.new); 
 
 router.get('/auth/google', passport.authenticate(
   'google',

@@ -3,22 +3,28 @@
   <head>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
+
   <body>
-    <nav>
+   
+    
     <% if (user) { %>
       
+      <nav id="main-nav">
         <a href="/cues/new">Write New Cue</a>
         &nbsp;|&nbsp;
-        <a href="/cues">All Cues</a>
+        <a href="/cues">My Cues</a>
       &nbsp;|&nbsp;
       <a href="/">Home</a>
       &nbsp;|&nbsp;
  <a href="/logout">Log Out</a>
+</nav>
 
  <% } else { %>
+  <div id="login-page">
 <h1>Cues</h1>
-    <a href="/auth/google" class="login">Log In</a>
+    <a href="/auth/google" id="login-page">Log In</a>
     <% } %>
- </nav>
+</div>
+
  
  

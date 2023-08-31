@@ -1,14 +1,33 @@
 
 <%- include('./partials/header.ejs') %>
 
-
-
-
-
-
-
 <% if (user) { %>
-<h1>I am logged in, this is my dashboard</h1>
+    <div id="welcomemsg">
+    <h1>Welcome <%=user.name%></h1>
+    <h3>Browse Cues:</h3>
+</div>
+
+    <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Tone</th>
+            <th>Content</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <% cues.forEach(function(cue) { %>
+            <tr>
+              <td><%= cue.title %></td>
+              <td><%= cue.tone %></td>
+              <td><%= cue.cueContent %></td>
+              <td><a href="/cues/<%= cues._id %>">Interact</a></td>
+            </tr>
+         
+          <% }); %>
+        </tbody>
+      </table>
 <% }; %>
     
     
